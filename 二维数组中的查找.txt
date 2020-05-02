@@ -1,0 +1,23 @@
+首先判断矩阵是否有效
+从右上开始查找，若比target大则列数减一，比target小则行数减一，相等则直接返回true。
+public class solution{
+    public boolean Find(int target, int [][] array) {
+        if(array == null || array.length == 0){
+            return false;
+        }
+        int m = array.length;
+        int n = array[0].length;
+        int i = 0, j = n - 1;
+        while(i < m && j >= 0){
+            if(array[i][j] == target){
+                return true;
+            }
+            if(array[i][j] > target){
+                j--;
+            }else{
+                i++;
+            }
+        }
+        return false;
+    }
+}
