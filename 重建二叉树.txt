@@ -1,3 +1,7 @@
+前序遍历：根左右，中序遍历：左根右，后序遍历：左右根
+根据前序遍历，确定root的位置，在中序遍历中，根据root位置将队列分为左子树和右子树部分
+再分别通过前序遍历的位置进行递归分割
+
 public class Solution {
     HashMap<Integer, Integer> map = new HashMap<>();
     int[] pre;
