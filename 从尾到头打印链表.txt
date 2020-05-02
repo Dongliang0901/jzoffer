@@ -1,0 +1,38 @@
+用一个stack？空间复杂度较高，O(n)，时间复杂度O(n)
+import java.util.*;
+public class Solution {
+    public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+        Deque<Integer> stack = new ArrayDeque<>();
+        while(listNode != null){
+            stack.push(listNode.val);
+            listNode = listNode.next;
+        }
+        ArrayList<Integer> ans = new ArrayList<>();
+        while(!stack.isEmpty()){
+            ans.add(stack.pop());
+        }
+        return ans;
+    }
+}
+
+原地反转链表，注意判断循环条件，切记，切记，切记
+public class Solution {
+    public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        ListNode pre = null;
+        ListNode cur = listNode;
+        ListNode next = null;
+        while(cur != null){
+            next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        while(pre != null){
+            ans.add(pre.val);
+            pre = pre.next;
+        }
+        return ans;
+    }
+}
+        
