@@ -1,0 +1,26 @@
+µü´ú£º
+public class Solution{
+    public int Fibonaci(int n){
+        if(n == 0) return 0;
+        if(n == 1) return 1;
+        if(n == 2) return 1;
+        int a = 1, b = 1;
+        while(n > 2){
+            int sum = a + b;
+            b = a;
+            a = sum;
+            n--;
+        }
+        return a;
+    }
+}
+
+µÝ¹é£º
+public class Solution{
+    public int Fibonaci(int n){
+        if(n == 0) return 0;
+        if(n == 1) return 1;
+        if(n == 2) return 1;
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
+    }
+}
