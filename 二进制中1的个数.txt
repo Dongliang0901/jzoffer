@@ -1,0 +1,13 @@
+&：n&1 = 1 代表n的二进制最右一位为1，n&1 = 0 代表n的二进制最右一位为0
+>>>：无符号右移
+
+public class Solution {
+    public int NumberOf1(int n) {
+        int num = 0;
+        while(n != 0){
+            num += n & 1;
+            n >>>= 1;
+        }
+        return num;
+    }
+}
